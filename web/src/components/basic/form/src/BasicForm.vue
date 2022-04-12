@@ -2,6 +2,10 @@
     <n-form ref="formElRef" v-bind="getBindValue" :model="formModel">
         <n-grid v-bind="getRow">
             <n-form-item-gi v-for="schema in getSchema" :key="schema.field" v-bind="{ span: 24, path: schema.field, ...schema, ...schema.gridProps }">
+                <template #label>
+                    <span>{{ schema.label }}</span>
+                    <HelpMessage v-if="schema.helpMessage" :message="schema.helpMessage" />
+                </template>
                 <FormItem :schema="schema" :form-props="getProps" :form-model="formModel" :set-form-model="setFormModel" :component-props="schema.componentProps" />
             </n-form-item-gi>
         </n-grid>
@@ -29,16 +33,17 @@ import dayjs from 'dayjs';
 import { Icon } from '@iconify/vue';
 import { useLoading } from '@/hooks';
 import type { Nullable, Recordable } from '@/typings/global';
-import useFormEvent from '@/components/basic/form/src/hooks/useFormEvent';
-import useFormValues from '@/components/basic/form/src/hooks/useFormValues';
+import useFormValues from './hooks/useFormValues';
+import useFormEvent from './hooks/useFormEvent';
 import type { FormActionType, FormSchema, FormProps } from './types/form';
 import { dateItemType } from './helper';
 import { basicProps } from './props';
 import FormItem from './components/FormItem.vue';
+import HelpMessage from './components/HelpMessage.vue';
 
 export default defineComponent({
     name: 'BasicForm',
-    components: { FormItem, Icon },
+    components: { HelpMessage, FormItem, Icon },
     props: basicProps,
     emits: ['register'],
     setup(props, { attrs, emit }) {
@@ -74,7 +79,7 @@ export default defineComponent({
 
         const getBindValue = computed(() => {
             const p = unref(propsRef);
-            return { rules: p.rules, onSubmit: handleSubmit, ...attrs };
+            return { ...p, onSubmit: handleSubmit, ...attrs };
         });
 
         function setFormModel(key: string, value: any) {

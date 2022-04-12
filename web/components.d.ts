@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ApiTreeSelect: typeof import('./src/components/basic/form/src/components/ApiTreeSelect.vue')['default']
     BasicForm: typeof import('./src/components/basic/form/src/BasicForm.vue')['default']
     BasicModal: typeof import('./src/components/basic/modal/src/BasicModal.vue')['default']
     BasicTable: typeof import('./src/components/basic/table/src/BasicTable.vue')['default']
@@ -14,6 +15,7 @@ declare module 'vue' {
     DarkModeSwitch: typeof import('./src/components/common/DarkModeSwitch.vue')['default']
     FormItem: typeof import('./src/components/basic/form/src/components/FormItem.vue')['default']
     GithubLink: typeof import('./src/components/custom/GithubLink.vue')['default']
+    HelpMessage: typeof import('./src/components/basic/form/src/components/HelpMessage.vue')['default']
     HoverContainer: typeof import('./src/components/common/HoverContainer.vue')['default']
     IconAntDesignCloseOutlined: typeof import('~icons/ant-design/close-outlined')['default']
     IconAntDesignEnterOutlined: typeof import('~icons/ant-design/enter-outlined')['default']
@@ -38,6 +40,7 @@ declare module 'vue' {
     IconMdiWhiteBalanceSunny: typeof import('~icons/mdi/white-balance-sunny')['default']
     IconPhCaretDoubleLeftBold: typeof import('~icons/ph/caret-double-left-bold')['default']
     IconPhCaretDoubleRightBold: typeof import('~icons/ph/caret-double-right-bold')['default']
+    IconPicker: typeof import('./src/components/basic/icon/IconPicker.vue')['default']
     IconSelect: typeof import('./src/components/custom/IconSelect.vue')['default']
     IconUilSearch: typeof import('~icons/uil/search')['default']
     ImageVerify: typeof import('./src/components/custom/ImageVerify.vue')['default']

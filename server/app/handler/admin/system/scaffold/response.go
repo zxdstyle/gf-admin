@@ -2,17 +2,13 @@ package scaffold
 
 import (
 	"gf-admin/app/logic/system/scaffold"
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 )
 
 type (
-	TableListRes []model.Table
-
 	SingularRes string
 
-	DatabaseListRes []model.Database
-
-	ColumnListRes []model.Column
+	ColumnListRes []system.Column
 
 	PreviewRes []*scaffold.AutoCode
 )

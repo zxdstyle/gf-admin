@@ -3,17 +3,23 @@ package permission
 import (
 	"context"
 	"gf-admin/app/logic"
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 	"gf-admin/pkg/responses"
 )
 
 type Api struct {
 }
 
-func (Api) Index(ctx context.Context, req *IndexReq) (*responses.PaginatorRes, error) {
-	paginator := responses.NewPaginator(&model.Permissions{})
-	err := logic.Permission().Index(ctx, req.ListReq, paginator)
-	return paginator, err
+func (Api) Index(ctx context.Context, req *IndexReq) (responses.IndexRes, error) {
+	mos := &system.Permissions{}
+	if req.HasPage() {
+		paginator := responses.NewPaginator(mos)
+		err := logic.Permission().Index(ctx, req.ListReq, paginator)
+		return paginator, err
+	}
+
+	err := logic.Permission().IndexAll(ctx, req.ListReq, mos)
+	return mos, err
 }
 
 func (Api) Create(ctx context.Context, req *CreateReq) (responses.CreateRes, error) {
@@ -27,7 +33,7 @@ func (Api) Create(ctx context.Context, req *CreateReq) (responses.CreateRes, err
 }
 
 func (Api) Show(ctx context.Context, req *ShowReq) (responses.ShowRes, error) {
-	var mo model.Permission
+	var mo system.Permission
 	mo.SetID(req.ID)
 
 	err := logic.Permission().Show(ctx, req.GetWith(), &mo)

@@ -1,4 +1,4 @@
-package permission
+package menu
 
 import (
 	"gf-admin/app/model/system"
@@ -12,6 +12,6 @@ type DbRepository struct {
 
 func NewDbRepository() *DbRepository {
 	return &DbRepository{
-		GormRepository: base.NewGormRepository(pkg.DB().Model(system.Permission{})),
+		GormRepository: base.NewGormRepository(pkg.DB().Model(system.Menu{})),
 	}
 }

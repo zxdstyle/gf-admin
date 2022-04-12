@@ -4,7 +4,56 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f7ab5da-f3fb-4d51-b3f1-82175bd315b2" name="Changes" comment="" />
+    <list default="true" id="6f7ab5da-f3fb-4d51-b3f1-82175bd315b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/app/handler/admin/system/scaffold/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/auth/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/auth/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/auth/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/auth/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/auth/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/auth/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/permission/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/permission/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/permission/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/permission/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/permission/response.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/role/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/role/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/role/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/role/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/role/response.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/scaffold/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/scaffold/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/scaffold/request.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/handler/admin/scaffold/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/handler/admin/system/scaffold/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/logic/base/logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/logic/base/logic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/logic/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/logic/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/logic/system/role/logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/logic/system/role/logic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/logic/system/scaffold/logic.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/logic/system/scaffold/logic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/middleware/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/middleware/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/model/base/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/model/permission.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/model/system/permission.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/model/role.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/model/system/role.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/model/scaffold.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/model/system/scaffold.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/base/gorm.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/base/gorm.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/base/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/base/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/permission/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/permission/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/role/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/role/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/role/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/role/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/scaffold/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/scaffold/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/repository/scaffold/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/repository/scaffold/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/rules/exists.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/rules/exists.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pkg/request/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/pkg/request/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pkg/request/with.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/pkg/request/with.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pkg/responses/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/pkg/responses/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/admin.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/mock/api/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/mock/api/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/basic/form/src/BasicForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/basic/form/src/BasicForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/basic/form/src/componentMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/basic/form/src/componentMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/basic/form/src/types/form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/basic/form/src/types/form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/plugins/naive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/plugins/naive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/service/api/restful.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/service/api/restful.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/typings/route.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/typings/route.d.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,19 +100,22 @@
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/app/handler/admin/system/menu" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/app/handler/admin/system/menu" />
+      <recent name="$PROJECT_DIR$/server/app/repository" />
       <recent name="$PROJECT_DIR$/server/pkg/server" />
       <recent name="$PROJECT_DIR$/server/app/handler/admin/permission" />
       <recent name="$PROJECT_DIR$/server/app/handler/admin" />
-      <recent name="$PROJECT_DIR$/server/config" />
-      <recent name="$PROJECT_DIR$/server/stubs/web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/app/handler/admin/system" />
+      <recent name="$PROJECT_DIR$/server/app/model/system" />
+      <recent name="$PROJECT_DIR$/server/app/model/base" />
       <recent name="$PROJECT_DIR$/server/app/logic/system" />
       <recent name="$PROJECT_DIR$/app/types" />
     </key>
@@ -91,6 +143,18 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.tpl" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
@@ -104,5 +168,16 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/server/app/logic/system/menu/logic.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

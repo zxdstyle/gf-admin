@@ -10,7 +10,7 @@ import (
 
 var existsRule = ExistsRule{}
 
-// ExistsRule exists:table,field
+// ExistsRule exists:table,field,ignore
 type ExistsRule struct {
 }
 
@@ -39,6 +39,12 @@ func (ExistsRule) Rule() gvalid.RuleFunc {
 		table = args[0]
 		if len(args) >= 2 {
 			field = args[1]
+		}
+		if len(args) >= 3 {
+			ignore := args[2]
+			if ignore == in.Value.String() {
+				return nil
+			}
 		}
 
 		var count int64

@@ -3,7 +3,8 @@ package role
 import (
 	"context"
 	"gf-admin/app/logic/base"
-	"gf-admin/app/model"
+	base2 "gf-admin/app/model/base"
+	"gf-admin/app/model/system"
 	"gf-admin/app/repository"
 )
 
@@ -17,12 +18,12 @@ func NewLogic() *Logic {
 	}
 }
 
-func (Logic) Create(ctx context.Context, mo model.RepositoryModel) error {
+func (Logic) Create(ctx context.Context, mo base2.RepositoryModel) error {
 	if err := repository.Role().Create(ctx, mo); err != nil {
 		return err
 	}
 
-	role := mo.(*model.Role)
+	role := mo.(*system.Role)
 	if role.Permissions != nil {
 		return repository.Role().AttachPermissions(ctx, role, role.Permissions)
 	}
@@ -30,12 +31,12 @@ func (Logic) Create(ctx context.Context, mo model.RepositoryModel) error {
 	return nil
 }
 
-func (Logic) Update(ctx context.Context, mo model.RepositoryModel) error {
+func (Logic) Update(ctx context.Context, mo base2.RepositoryModel) error {
 	if err := repository.Role().Update(ctx, mo); err != nil {
 		return err
 	}
 
-	role := mo.(*model.Role)
+	role := mo.(*system.Role)
 	if role.Permissions != nil {
 		return repository.Role().SyncPermissions(ctx, role, role.Permissions)
 	}

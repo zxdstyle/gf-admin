@@ -35,6 +35,7 @@ declare namespace AuthRoute {
         | 'plugin_swiper'
         | 'system'
         | 'system_user'
+        | 'system_menu'
         | 'system_scaffold'
         | 'system_dashboard'
         | 'system_exception'

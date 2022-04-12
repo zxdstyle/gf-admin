@@ -3,7 +3,6 @@ package request
 import (
 	"context"
 	"fmt"
-	"github.com/gogf/gf/v2/text/gstr"
 	"gorm.io/gorm"
 )
 
@@ -13,18 +12,17 @@ const (
 
 type (
 	ListReq struct {
-		Page     int      `json:"page"`
-		PageSize int      `json:"pageSize"`
-		With     []string `json:"with"`
-		Selects  string   `json:"selects"`
-		OrderBy  string   `json:"order_by"`
-		Order    string   `json:"order" v:"in:asc,desc,ASC,DESC"`
+		Page     int `json:"page"`
+		PageSize int `json:"pageSize"`
+		HasWith
+		Selects string `json:"selects"`
+		OrderBy string `json:"order_by"`
+		Order   string `json:"order" v:"in:asc,desc,ASC,DESC"`
 	}
 
 	ShowReq struct {
-		_with   []string
-		With    string `json:"with"`
 		Selects string `json:"selects"`
+		HasWith
 	}
 )
 
@@ -66,6 +64,10 @@ func (req *ListReq) GetPage() int {
 	return req.Page
 }
 
+func (req *ListReq) HasPage() bool {
+	return req.Page != 0
+}
+
 func (req *ListReq) GetOffset() int {
 	return (req.GetPage() - 1) * req.GetPageSize()
 }
@@ -73,14 +75,4 @@ func (req *ListReq) GetOffset() int {
 func (req *ListReq) queryByFilter(tx *gorm.DB) *gorm.DB {
 	// TODO
 	return tx
-}
-
-func (req *ShowReq) GetWith() []string {
-	if len(req.With) == 0 {
-		return []string{}
-	}
-	if len(req._with) == 0 {
-		req._with = gstr.Split(req.With, ",")
-	}
-	return req._with
 }

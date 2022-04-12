@@ -165,8 +165,10 @@ module.exports = {
         'no-shadow': 'off',
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
+        'no-return-assign': 'off',
         'vue/multi-word-component-names': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/ban-types': [
             'error',
             {

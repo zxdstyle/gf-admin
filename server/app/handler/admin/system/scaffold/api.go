@@ -3,7 +3,7 @@ package scaffold
 import (
 	"context"
 	"gf-admin/app/logic"
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 	"gf-admin/app/types"
 	"gf-admin/pkg/responses"
 	"gf-admin/pkg/utils"
@@ -27,7 +27,7 @@ func (Scaffold) Singular(ctx context.Context, req *SingularReq) (*SingularRes, e
 }
 
 func (Scaffold) Column(ctx context.Context, req *ColumnListReq) (*ColumnListRes, error) {
-	var t []model.Column
+	var t []system.Column
 	if err := logic.Scaffold().GetColumns(ctx, req.Table, &t); err != nil {
 		return nil, responses.Failed(err)
 	}

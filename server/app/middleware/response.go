@@ -6,6 +6,7 @@ import (
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
+	"github.com/gogf/gf/v2/util/gvalid"
 	"net/http"
 )
 
@@ -50,6 +51,10 @@ func Response(r *ghttp.Request) {
 		code = responses.UnprocessableEntity
 	default:
 		code = gcode.New(http.StatusInternalServerError, err.Error(), nil)
+	}
+
+	if val, ok := err.(gvalid.Error); ok {
+		code = gcode.New(http.StatusUnprocessableEntity, val.Error(), nil)
 	}
 
 	r.Response.ClearBuffer()

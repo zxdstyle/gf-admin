@@ -1,6 +1,7 @@
 package logic
 
 import (
+	"gf-admin/app/logic/system/menu"
 	"gf-admin/app/logic/system/permission"
 	"gf-admin/app/logic/system/role"
 	"gf-admin/app/logic/system/scaffold"
@@ -32,4 +33,10 @@ func Permission() *permission.Logic {
 	return logic.GetOrSetFuncLock("logic.permission", func() interface{} {
 		return permission.NewLogic()
 	}).(*permission.Logic)
+}
+
+func Menu() *menu.Logic {
+	return logic.GetOrSetFuncLock("logic.menu", func() interface{} {
+		return menu.NewLogic()
+	}).(*menu.Logic)
 }

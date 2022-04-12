@@ -1,7 +1,7 @@
 package permission
 
 import (
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 	"gf-admin/pkg/request"
 	"github.com/gogf/gf/v2/frame/g"
 )
@@ -45,8 +45,8 @@ type (
 	}
 )
 
-func (req CreateReq) ToModel() (model.Permission, error) {
-	return model.Permission{
+func (req CreateReq) ToModel() (system.Permission, error) {
+	return system.Permission{
 		Name:       req.Name,
 		Slug:       req.Slug,
 		HttpMethod: req.HttpMethod,
@@ -56,8 +56,8 @@ func (req CreateReq) ToModel() (model.Permission, error) {
 	}, nil
 }
 
-func (req UpdateReq) ToModel() (model.Permission, error) {
-	role := model.Permission{
+func (req UpdateReq) ToModel() (system.Permission, error) {
+	role := system.Permission{
 		Name:       req.Name,
 		Slug:       req.Slug,
 		HttpMethod: req.HttpMethod,

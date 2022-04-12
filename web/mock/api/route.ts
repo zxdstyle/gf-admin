@@ -42,6 +42,16 @@ const routes: AuthRoute.Route[] = [
                     icon: 'ic:baseline-laptop',
                 },
             },
+            {
+                name: 'system_menu',
+                path: '/system/menu',
+                component: 'self',
+                meta: {
+                    title: '菜单',
+                    requiresAuth: true,
+                    icon: 'bx:food-menu',
+                },
+            },
         ],
     },
     {

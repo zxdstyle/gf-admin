@@ -2,7 +2,7 @@ package role
 
 import (
 	"context"
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 	"gf-admin/app/repository/base"
 	"gf-admin/pkg"
 )
@@ -13,12 +13,12 @@ type DbRepository struct {
 
 func NewDbRepository() *DbRepository {
 	return &DbRepository{
-		GormRepository: base.NewGormRepository(pkg.DB().Model(model.Role{})),
+		GormRepository: base.NewGormRepository(pkg.DB().Model(system.Role{})),
 	}
 }
 
 // AttachPermissions 添加权限
-func (repo *DbRepository) AttachPermissions(ctx context.Context, role *model.Role, permissions *model.Permissions) error {
+func (repo *DbRepository) AttachPermissions(ctx context.Context, role *system.Role, permissions *system.Permissions) error {
 	if role == nil || permissions == nil {
 		return nil
 	}
@@ -35,7 +35,7 @@ func (repo *DbRepository) AttachPermissions(ctx context.Context, role *model.Rol
 }
 
 // SyncPermissions 同步权限
-func (repo *DbRepository) SyncPermissions(ctx context.Context, role *model.Role, permissions *model.Permissions) error {
+func (repo *DbRepository) SyncPermissions(ctx context.Context, role *system.Role, permissions *system.Permissions) error {
 	if role == nil || permissions == nil {
 		return nil
 	}

@@ -1,8 +1,10 @@
-package model
+package system
+
+import "gf-admin/app/model/base"
 
 type (
 	Role struct {
-		Model
+		base.Model
 		Name *string `gorm:"column:name" json:"name,omitempty"`
 		Slug *string `gorm:"column:slug" json:"slug,omitempty"`
 
@@ -16,9 +18,9 @@ func (Role) TableName() string {
 	return "admin_roles"
 }
 
-func (*Role) WithRules() PreloadRule {
-	return PreloadRule{
-		"Permissions": defaultPreloadFunc,
+func (*Role) WithRules() base.PreloadRule {
+	return base.PreloadRule{
+		"Permissions": base.DefaultPreloadFunc,
 	}
 }
 
@@ -26,7 +28,7 @@ func (r Roles) Len() int {
 	return len(r)
 }
 
-func (r Roles) GetModel(i ...int) RepositoryModel {
+func (r Roles) GetModel(i ...int) base.RepositoryModel {
 	if len(r) == 0 {
 		return &Role{}
 	}

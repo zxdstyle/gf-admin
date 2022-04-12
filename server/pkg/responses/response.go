@@ -12,6 +12,9 @@ type (
 		Data    interface{}
 	}
 
+	IndexRes interface {
+	}
+
 	CreateRes interface {
 	}
 

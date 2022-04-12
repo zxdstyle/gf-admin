@@ -2,7 +2,7 @@ package scaffold
 
 import (
 	"context"
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 	"gf-admin/pkg"
 	"gorm.io/gorm"
 )
@@ -19,12 +19,12 @@ func NewDbRepository() *DbRepository {
 	}
 }
 
-func (m DbRepository) GetTables(ctx context.Context, dbName string, data *[]model.Table) error {
+func (m DbRepository) GetTables(ctx context.Context, dbName string, data *[]system.Table) error {
 	sql := "SELECT TABLE_NAME AS `name`, ENGINE AS `engine` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = ?"
 	return m.Orm.WithContext(ctx).Raw(sql, dbName).Find(data).Error
 }
 
-func (m DbRepository) GetColumns(ctx context.Context, tableName string, dbName string, data *[]model.Column) error {
+func (m DbRepository) GetColumns(ctx context.Context, tableName string, dbName string, data *[]system.Column) error {
 	sql := `
 	SELECT COLUMN_NAME AS name, DATA_TYPE AS type, COLUMN_COMMENT as comment, COLUMN_DEFAULT AS default_value,
 		CASE IS_NULLABLE WHEN 'YES' THEN 1 ELSE 0 END AS nullable,

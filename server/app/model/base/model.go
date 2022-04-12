@@ -1,4 +1,4 @@
-package model
+package base
 
 import (
 	"github.com/gogf/gf/v2/os/gtime"
@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	defaultPreloadFunc = func(tx *gorm.DB, resource string) *gorm.DB {
+	DefaultPreloadFunc = func(tx *gorm.DB, resource string) *gorm.DB {
 		return tx.Preload(resource)
 	}
 )

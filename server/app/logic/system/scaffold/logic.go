@@ -3,7 +3,7 @@ package scaffold
 import (
 	"context"
 	"fmt"
-	"gf-admin/app/model"
+	"gf-admin/app/model/system"
 	"gf-admin/app/repository"
 	"gf-admin/app/types"
 	"gf-admin/pkg/utils"
@@ -49,7 +49,7 @@ func NewLogic() *Logic {
 }
 
 func (Logic) GetTables(ctx context.Context, options *types.Options) error {
-	var tables []model.Table
+	var tables []system.Table
 	if err := repository.Scaffold().GetTables(ctx, g.DB().GetConfig().Name, &tables); err != nil {
 		return err
 	}
@@ -63,7 +63,7 @@ func (Logic) GetTables(ctx context.Context, options *types.Options) error {
 	return nil
 }
 
-func (Logic) GetColumns(ctx context.Context, table string, columns *[]model.Column) error {
+func (Logic) GetColumns(ctx context.Context, table string, columns *[]system.Column) error {
 	if err := repository.Scaffold().GetColumns(ctx, table, g.DB().GetConfig().Name, columns); err != nil {
 		return err
 	}
@@ -75,7 +75,7 @@ func (Logic) GetColumns(ctx context.Context, table string, columns *[]model.Colu
 	return nil
 }
 
-func (l Logic) CreateCode(ctx context.Context, path, table string, fields model.Fields) error {
+func (l Logic) CreateCode(ctx context.Context, path, table string, fields system.Fields) error {
 	wg := &sync.WaitGroup{}
 
 	var errors []error
@@ -139,7 +139,7 @@ func (l Logic) CreateApiPage(ctx context.Context, table string) error {
 	return gfile.PutContents(file, res)
 }
 
-func (l Logic) CreateListPage(ctx context.Context, fields model.Fields, table, path string) error {
+func (l Logic) CreateListPage(ctx context.Context, fields system.Fields, table, path string) error {
 	res, err := l.viewer.Parse(ctx, listPageTpl, g.Map{
 		"table":  table,
 		"fields": fields,
@@ -152,7 +152,7 @@ func (l Logic) CreateListPage(ctx context.Context, fields model.Fields, table, p
 	return gfile.PutContents(file, res)
 }
 
-func (l Logic) CreateFormPage(ctx context.Context, fields model.Fields, table, path string) error {
+func (l Logic) CreateFormPage(ctx context.Context, fields system.Fields, table, path string) error {
 	res, err := l.viewer.Parse(ctx, formPageTpl, g.Map{
 		"table":  table,
 		"fields": fields,
@@ -165,7 +165,7 @@ func (l Logic) CreateFormPage(ctx context.Context, fields model.Fields, table, p
 	return gfile.PutContents(file, res)
 }
 
-func (l Logic) CreateDataPage(ctx context.Context, fields model.Fields, table, path string) error {
+func (l Logic) CreateDataPage(ctx context.Context, fields system.Fields, table, path string) error {
 	res, err := l.viewer.Parse(ctx, useDataTpl, g.Map{
 		"table":  table,
 		"fields": fields,

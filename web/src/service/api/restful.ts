@@ -1,12 +1,19 @@
 import { request } from '@/service/request';
 import type { Recordable } from '@/typings/global';
 
+interface IndexReq {
+    order?: 'asc' | 'desc';
+    orderBy?: string;
+    page?: number;
+    pageSize?: number;
+}
+
 export default class Restful {
     version = 'v1';
 
     resource = 'users';
 
-    Index = (params = {}) => {
+    Index = (params: IndexReq = {}) => {
         return request.get(`/api/${this.version}/${this.resource}`, { params });
     };
 

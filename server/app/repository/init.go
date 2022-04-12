@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"gf-admin/app/repository/menu"
 	"gf-admin/app/repository/permission"
 	"gf-admin/app/repository/role"
 	"gf-admin/app/repository/scaffold"
@@ -32,4 +33,10 @@ func Permission() permission.Repository {
 	return repositories.GetOrSetFuncLock("repository.permissions", func() interface{} {
 		return permission.NewDbRepository()
 	}).(permission.Repository)
+}
+
+func Menu() menu.Repository {
+	return repositories.GetOrSetFuncLock("repository.menu", func() interface{} {
+		return menu.NewDbRepository()
+	}).(menu.Repository)
 }

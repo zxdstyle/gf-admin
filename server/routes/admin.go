@@ -1,10 +1,11 @@
 package routes
 
 import (
-	"gf-admin/app/handler/admin/auth"
-	"gf-admin/app/handler/admin/permission"
-	"gf-admin/app/handler/admin/role"
-	"gf-admin/app/handler/admin/scaffold"
+	"gf-admin/app/handler/admin/system/auth"
+	"gf-admin/app/handler/admin/system/menu"
+	"gf-admin/app/handler/admin/system/permission"
+	"gf-admin/app/handler/admin/system/role"
+	"gf-admin/app/handler/admin/system/scaffold"
 	"gf-admin/app/handler/admin/user"
 	"gf-admin/app/middleware"
 	"github.com/gogf/gf/v2/frame/g"
@@ -21,6 +22,7 @@ func init() {
 			v1.Bind(new(user.Api))
 			v1.Bind(new(auth.Auth))
 			v1.Bind(new(role.Api))
+			v1.Bind(new(menu.Api))
 			v1.Bind(new(permission.Api))
 		})
 	})

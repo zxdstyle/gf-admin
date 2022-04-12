@@ -4,6 +4,7 @@ specifiers:
   '@amap/amap-jsapi-types': ^0.0.8
   '@antv/g2plot': ^2.4.10
   '@better-scroll/core': ^2.4.2
+  '@he-tree/vue3': ^1.2.9
   '@highlightjs/vue-plugin': ^2.0.1
   '@iconify/json': ^2.1.18
   '@iconify/vue': ^3.2.0
@@ -71,6 +72,7 @@ specifiers:
 dependencies:
   '@antv/g2plot': 2.4.10
   '@better-scroll/core': 2.4.2
+  '@he-tree/vue3': 1.2.9_vue@3.2.31
   '@highlightjs/vue-plugin': 2.0.1
   '@vueuse/core': 8.1.2_vue@3.2.31
   axios: 0.26.1
@@ -692,6 +694,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@he-tree/vue3/1.2.9_vue@3.2.31:
+    resolution: {integrity: sha512-3Xq/HCgShp6yBXrBN9A4jamEAKdbjj5gfgAOhQwQYRS7TWjWFGdkrFDoE+Gkdum1iMM7cWyKIurMdjMoyFQsdQ==}
+    peerDependencies:
+      vue: ^3
+    dependencies:
+      '@babel/runtime': 7.17.8
+      draggable-helper: 6.0.5
+      helper-js: 2.0.7
+      tslib: 2.3.1
+      vue: 3.2.31
+    dev: false
 
   /@highlightjs/vue-plugin/2.0.1:
     resolution: {integrity: sha512-6pmLh+VSvswavU7RB0BnWLp/9ITX6UYeVmR1gkFKQ4yx777lOCsGZOKc+1rswBDlD+bWb0xXVig85A7GEU2Vsg==}
@@ -1961,6 +1975,22 @@ packages:
       minimatch: 3.1.2
     dev: false
 
+  /drag-event-service/1.1.10:
+    resolution: {integrity: sha512-V7WhmEIRLWnuj0sLRHAy5Ce5Q5ZOX4kh4SYY+z4JbUON+WykPyUS0EhZNhF2NjAbnEieMfXUw35lFlI+b6pNZA==}
+    dependencies:
+      '@babel/runtime': 7.17.8
+      helper-js: 2.0.7
+    dev: false
+
+  /draggable-helper/6.0.5:
+    resolution: {integrity: sha512-J741PL2if2nWn03J0F4fqhWV20vSXV4IL5qy/AqoiLb9QxyhKynr29z1GFCqswrZAA6AUkvyvJFcUbdS1Aa/HQ==}
+    dependencies:
+      '@babel/runtime': 7.17.8
+      drag-event-service: 1.1.10
+      helper-js: 2.0.7
+      tslib: 2.3.1
+    dev: false
+
   /ee-first/1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
@@ -2799,6 +2829,13 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
     dev: true
+
+  /helper-js/2.0.7:
+    resolution: {integrity: sha512-qdagluMOcYL5P9fYLqbGedq9LCWH1W4BM2/yTH+XIy6MIYLE+qAHWU6acZ5CyWJslXMhKCKPl1yDYVJCKGgS6A==}
+    dependencies:
+      '@babel/runtime': 7.17.8
+      tslib: 2.3.1
+    dev: false
 
   /highlight.js/11.5.0:
     resolution: {integrity: sha512-SM6WDj5/C+VfIY8pZ6yW6Xa0Fm1tniYVYWYW1Q/DcMnISZFrC3aQAZZZFAAZtybKNrGId3p/DNbFTtcTXXgYBw==}

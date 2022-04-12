@@ -1,8 +1,10 @@
 package model
 
+import "gf-admin/app/model/base"
+
 // User 用户表
 type User struct {
-	Model
+	base.Model
 	Email    *string `json:"email,omitempty"`                      //邮箱
 	Username *string `json:"username,omitempty"`                   //账户
 	Password *string `gorm:"default:''" json:"password,omitempty"` //密码
@@ -11,15 +13,15 @@ type User struct {
 
 type Users []*User
 
-func (*User) WithRules() PreloadRule {
-	return PreloadRule{}
+func (*User) WithRules() base.PreloadRule {
+	return base.PreloadRule{}
 }
 
 func (u Users) Len() int {
 	return len(u)
 }
 
-func (u Users) GetModel(i ...int) RepositoryModel {
+func (u Users) GetModel(i ...int) base.RepositoryModel {
 	if len(u) == 0 {
 		return &User{}
 	}
